@@ -1,12 +1,10 @@
 require "minitest/autorun"
 
-class Person
+class P
   attr_reader :name
-  def initialize(name)
+  def initialize name
     @name = name
   end
-
-
 end
 
 class  DemonstrationTest < MiniTest::Test 
@@ -14,7 +12,7 @@ class  DemonstrationTest < MiniTest::Test
     assert true 
   end
   def test_person_has_a_name
-    person=Person.new "jose"
-
+    p = P.new "jose"
+    assert_equal p.name ,"jose"
   end
 end
