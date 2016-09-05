@@ -44,6 +44,8 @@ class ProductRepositoryTest <MiniTest::Test
   def setup 
     FileUtils.rm ProductRepository::FILE rescue nil 
     ProductRepository.create Product.new("Microphone",200,"audio")
+    ProductRepository.create Product.new("dashing",200,"audio")
+    ProductRepository.create Product.new("Microp",200,"audio")
   end 
 
   def test_retrieves_a_list_of_product
@@ -51,7 +53,7 @@ class ProductRepositoryTest <MiniTest::Test
   end
 
   def test_creates_a_record_based_off_a_product
-    assert_equal 1,ProductRepository.all.length
+    assert_equal 3,ProductRepository.all.length
   end
 
   def test_finds_a_record_by_key
